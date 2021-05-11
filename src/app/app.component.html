@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container--geral">
+  <div class="">
+    <form [formGroup]="cadastro" class="">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        (keypress)="validaCadastro($event.target.value)"
+      />
+      <label for="exampleInputEmail1" class="form-label">Senha</label>
+      <input
+        type="password"
+        class="form-control"
+        id="numero"
+        (keypress)="validaCadastro($event.target.value)"
+      />
+    </form>
+    <!-- <p></p> -->
+  </div>
+</div>
