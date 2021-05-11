@@ -7,7 +7,15 @@ body {
 }
 .container--geral {
   padding: 24px;
+  text-align: left;
 }
 div {
   text-align: left;
+}
+.error-email {
+  color: #ff0000;
+  margin-top: 15px;
+}
+.align-fields {
+  margin-top: 15px;
 }

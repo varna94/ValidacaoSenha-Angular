@@ -15,24 +15,46 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {}
-  validaCadastro(numero: number) {
-    console.log(numero);
+  validaEmail(emailValue: any) {
+    let email = emailValue.target.value;
+    console.log(email);
     this.cadastro = this.fb.group({
       email: [
-        numero,
+        email,
         Validators.compose([
           Validators.required,
           Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
         ])
-      ],
-      senha: [
-        numero,
-        Validators.compose([Validators.required, Validators.minLength(6)])
       ]
     });
-
+    console.log("email");
     console.log(this.cadastro.get("email")?.valid);
     console.log(this.cadastro.get("email")?.value);
-    this.ngOnInit();
+    // this.ngOnInit();
+  }
+  validaSenha(senhaValue: any) {
+    let senha = senhaValue.target.value;
+    console.log(senha);
+    this.cadastro = this.fb.group({
+      senha: [
+        senha,
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(
+            "^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$"
+          )
+        ])
+      ]
+    });
+    console.log("senha");
+    console.log(this.cadastro.get("senha")?.valid);
+    console.log(this.cadastro.get("senha")?.value);
+    // this.ngOnInit();
+  }
+  get email() {
+    return this.cadastro.get("email");
+  }
+  get senha() {
+    return this.cadastro.get("senha");
   }
 }
