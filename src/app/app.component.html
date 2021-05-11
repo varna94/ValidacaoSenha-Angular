@@ -8,10 +8,11 @@
           type="email"
           class="form-control"
           id="email"
-          (keypress)="validaEmail($event)"
           formControlName="email"
         />
-        <p class="error-email" *ngIf="!email?.valid">Email invalido!</p>
+        <p class="error-email" *ngIf="!email?.valid && !email?.pristine">
+          Email invalido!
+        </p>
       </div>
       <div class="align-fields">
         <label for="exampleInputEmail1" class="form-label">Senha</label>
@@ -19,12 +20,12 @@
           type="password"
           class="form-control"
           id="numero"
-          (keypress)="validaSenha($event)"
           formControlName="senha"
         />
-        <p class="error-email" *ngIf="!senha?.valid">Senha inválida!</p>
+        <p class="error-email" *ngIf="!senha?.valid && !senha?.pristine">
+          A senha precisa ter no mínimo 6 caracteres!
+        </p>
       </div>
     </form>
-    <!-- <p></p> -->
   </div>
 </div>
