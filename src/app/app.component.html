@@ -8,6 +8,7 @@
           type="email"
           class="form-control"
           id="email"
+          [ngClass]="{'input-error':!email?.valid && !email?.pristine,'input-sucsess': email?.valid && email?.pristine}"
           formControlName="email"
         />
         <p class="error-email" *ngIf="!email?.valid && !email?.pristine">
@@ -19,6 +20,7 @@
         <input
           type="password"
           class="form-control"
+          [ngClass]="{'input-error':!senha?.valid && !senha?.pristine,'input-sucsess': senha?.valid && senha?.pristine}"
           id="numero"
           formControlName="senha"
         />

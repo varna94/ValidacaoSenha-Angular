@@ -3,19 +3,37 @@
 html,
 body {
   font-family: sans-serif;
-  text-align: left;
+  text-align: left !important;
 }
 .container--geral {
   padding: 24px;
-  text-align: left;
 }
 div {
-  text-align: left;
+  text-align: left !important;
 }
 .error-email {
   color: #ff0000;
   margin-top: 15px;
 }
+
 .align-fields {
   margin-top: 15px;
+}
+.input-error {
+  border-color: #ff0000;
+  outline: none !important;
+}
+.input-error:focus {
+  border-color: #ff0000;
+  outline: none !important;
+  box-shadow: none;
+}
+.input-sucsess {
+  border-color: #ced4da;
+  outline: none !important;
+}
+.input-sucsess:focus {
+  border-color: #ced4da;
+  outline: none !important;
+  box-shadow: none;
 }
