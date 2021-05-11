@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
   }
   get email() {
     return this.cadastro.get("email");
+    this.ngOnInit();
   }
   get senha() {
     return this.cadastro.get("senha");
