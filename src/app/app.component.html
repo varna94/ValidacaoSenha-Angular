@@ -8,13 +8,16 @@
         class="form-control"
         id="email"
         (keypress)="validaCadastro($event.target.value)"
+        formControlName="email"
       />
+      <p *ngIf="!email?.valid && email?.pristine">Email invalido!</p>
       <label for="exampleInputEmail1" class="form-label">Senha</label>
       <input
         type="password"
         class="form-control"
         id="numero"
         (keypress)="validaCadastro($event.target.value)"
+        formControlName="senha"
       />
     </form>
     <!-- <p></p> -->
